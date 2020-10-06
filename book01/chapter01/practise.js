@@ -27,12 +27,12 @@ function checkOut() {
     while (bankAccount > 0) {
         if (price(phoneCost, caseCost) <= spendThreshold && price(phoneCost, caseCost) < bankAccount) {
             bankAccount = bankAccount - price(phoneCost, caseCost);
-            console.log("You bought a phone with a case for " + formatMoney(price(phoneCost + caseCost)));
+            console.log(`You bought a phone with a case for ${formatMoney(price(phoneCost + caseCost))}`);
         } else if (price(phoneCost) <= spendThreshold && price(phoneCost) < bankAccount) {
             bankAccount = bankAccount - price(phoneCost);
-            console.log("You only bought the phone for " + formatMoney(price(phoneCost)));
+            console.log(`You only bought the phone for ${formatMoney(price(phoneCost))}`);
         } else {
-            console.log("You can't buy any more phones!");
+            console.log(`You can't buy any more phones!`);
             break;
         }    
         console.log(`You now have ${formatMoney(bankAccount)} left.`);
